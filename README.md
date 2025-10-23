@@ -30,6 +30,15 @@
 5. 检测身体对齐情况，判断动作是否规范
 6. 实时更新计数和状态
 
+## 快速安装
+
+如果项目已构建，你可以直接安装APK：
+
+1. 在项目根目录找到 `PushUpCounter-Release.apk`
+2. 将APK传输到Android设备
+3. 在设备上点击APK文件安装
+4. 完整的安装步骤请查看 [安装指南](INSTALL.md)
+
 ## 使用方法
 
 1. 打开应用
@@ -43,12 +52,28 @@
 
 ### 前置要求
 
-- Android Studio Hedgehog (2023.1.1) 或更高版本
-- JDK 8 或更高版本
+- Android Studio Hedgehog (2023.1.1) 或更高版本（如果使用IDE开发）
+- JDK 17 或更高版本
 - Android SDK 34
 - Gradle 8.2
 
-### 构建步骤
+### 快速构建APK
+
+最快的方式是使用构建脚本生成可安装的APK：
+
+```bash
+./build-apk.sh
+```
+
+构建完成后，APK文件会自动复制到项目根目录：
+- `PushUpCounter-Debug.apk` - 调试版本
+- `PushUpCounter-Release.apk` - 发布版本（已优化）
+
+将APK传输到Android设备并点击安装即可使用。
+
+> 📖 详细的构建说明请查看 [BUILD_APK.md](BUILD_APK.md)
+
+### 使用Android Studio开发
 
 1. 克隆项目:
 ```bash
@@ -73,6 +98,19 @@ cd PushUpCounter
 ```
 
 > **注意**: 首次运行时，Gradle会自动下载所需的依赖和工具。这可能需要几分钟时间。
+
+### 命令行构建
+
+```bash
+# 构建Debug APK
+./gradlew assembleDebug
+
+# 构建Release APK
+./gradlew assembleRelease
+
+# 安装到连接的设备
+./gradlew installDebug
+```
 
 ## 项目结构
 
@@ -112,9 +150,12 @@ app/src/main/
 
 ## 文档
 
+- [安装指南](INSTALL.md) - 如何在Android设备上安装APK
+- [APK构建指南](BUILD_APK.md) - 如何构建可安装的APK文件
 - [使用指南](USAGE.md) - 详细的使用说明和技巧
 - [功能特性](FEATURES.md) - 完整的功能列表和技术细节
 - [开发指南](DEVELOPMENT.md) - 开发环境设置和代码规范
+- [部署指南](DEPLOYMENT.md) - 发布到应用商店的完整流程
 - [贡献指南](CONTRIBUTING.md) - 如何为项目做贡献
 - [更新日志](CHANGELOG.md) - 版本历史和更新记录
 - [项目总结](PROJECT_SUMMARY.md) - 项目概览和架构说明

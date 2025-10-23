@@ -78,9 +78,9 @@ class PushUpDetector {
     }
     
     private fun calculateAngle(
-        firstPoint: com.google.mlkit.vision.common.PointF3D,
-        midPoint: com.google.mlkit.vision.common.PointF3D,
-        lastPoint: com.google.mlkit.vision.common.PointF3D
+        firstPoint: android.graphics.PointF,
+        midPoint: android.graphics.PointF,
+        lastPoint: android.graphics.PointF
     ): Float {
         val radians = atan2(lastPoint.y - midPoint.y, lastPoint.x - midPoint.x) -
                 atan2(firstPoint.y - midPoint.y, firstPoint.x - midPoint.x)
@@ -95,10 +95,10 @@ class PushUpDetector {
     }
     
     private fun checkBodyAlignment(
-        leftShoulder: com.google.mlkit.vision.common.PointF3D,
-        leftHip: com.google.mlkit.vision.common.PointF3D,
-        rightShoulder: com.google.mlkit.vision.common.PointF3D,
-        rightHip: com.google.mlkit.vision.common.PointF3D
+        leftShoulder: android.graphics.PointF,
+        leftHip: android.graphics.PointF,
+        rightShoulder: android.graphics.PointF,
+        rightHip: android.graphics.PointF
     ): Boolean {
         val leftDist = distance(leftShoulder.x, leftShoulder.y, leftHip.x, leftHip.y)
         val rightDist = distance(rightShoulder.x, rightShoulder.y, rightHip.x, rightHip.y)
