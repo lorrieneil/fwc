@@ -7,6 +7,18 @@
 
 ## [未发布]
 
+### 新增
+- 🔨 添加APK构建配置和签名支持
+- 📦 自动构建脚本 (`build-apk.sh`)
+- 🔑 密钥生成脚本 (`generate-keystore.sh`)
+- 📖 APK构建指南文档 (`BUILD_APK.md`)
+- 📱 安装指南文档 (`INSTALL.md`)
+- ⚙️ 签名配置（开发/测试用keystore）
+
+### 修复
+- 🐛 修复PushUpDetector中的类型不匹配错误
+- 🔧 添加gradle-wrapper.jar文件支持
+
 ## [1.0.0] - 2024-10-23
 
 ### 新增
