@@ -32,12 +32,21 @@
 
 ## 快速安装
 
-如果项目已构建，你可以直接安装APK：
+### 从 GitHub Releases 下载（推荐）
+
+1. 访问项目的 [Releases 页面](../../releases)
+2. 下载最新版本的 `PushUpCounter-Release.apk`
+3. 将APK传输到Android设备
+4. 在设备上点击APK文件安装
+5. 完整的安装步骤请查看 [安装指南](INSTALL.md)
+
+### 本地构建安装
+
+如果项目已在本地构建，你可以直接安装APK：
 
 1. 在项目根目录找到 `PushUpCounter-Release.apk`
 2. 将APK传输到Android设备
 3. 在设备上点击APK文件安装
-4. 完整的安装步骤请查看 [安装指南](INSTALL.md)
 
 ## 使用方法
 
@@ -50,14 +59,38 @@
 
 ## 构建和运行
 
-### 前置要求
+### 自动构建（GitHub Actions）
+
+项目配置了自动化构建流程：
+
+#### 📦 自动构建
+每次推送到 main 分支时，GitHub Actions 会自动构建 APK，可在 Actions 页面下载。
+
+#### 🚀 发布版本
+通过 Git 标签创建正式发布版本：
+
+```bash
+# 创建版本标签
+git tag -a v1.0.0 -m "Release version 1.0.0"
+
+# 推送标签触发自动构建和发布
+git push origin v1.0.0
+```
+
+构建完成后，APK 文件会自动上传到 [Releases 页面](../../releases)。
+
+> 📖 详细说明请查看 [GitHub Actions 工作流文档](.github/workflows/README.md)
+
+### 本地构建
+
+#### 前置要求
 
 - Android Studio Hedgehog (2023.1.1) 或更高版本（如果使用IDE开发）
 - JDK 17 或更高版本
 - Android SDK 34
 - Gradle 8.2
 
-### 快速构建APK
+#### 快速构建APK
 
 最快的方式是使用构建脚本生成可安装的APK：
 
