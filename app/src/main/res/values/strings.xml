@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">俯卧撑计数器</string>
+    <string name="upload_video">上传视频</string>
+    <string name="start_camera">开始摄像</string>
+    <string name="select_video">选择视频</string>
+    <string name="analyzing">分析中…</string>
+    <string name="push_up_count">俯卧撑次数: %d</string>
+    <string name="permission_required">需要相机和存储权限</string>
+    <string name="grant_permission">授予权限</string>
+    <string name="video_analysis">视频分析</string>
+    <string name="processing_video">正在处理视频...</string>
+</resources>
